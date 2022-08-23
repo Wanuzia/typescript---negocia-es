@@ -13,6 +13,14 @@ export class Negociacao {
         const data = new Date(this._data.getTime());
         return data;
     }
+    
+    public paraTexto(): string {
+        return `
+        Data: ${this.data},
+        Quantidade: ${this.quantidade},
+        Valor: ${this.valor}
+    `
+    }
 
     public static criaDe(dataString: string, quantidadeString: string, valorString: string): Negociacao {
         const exp = /-/g;
