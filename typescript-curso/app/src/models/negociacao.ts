@@ -1,9 +1,13 @@
-export class Negociacao {
+import { Imprimivel } from "../utils/imprimivel.js";
+
+export class Negociacao extends Imprimivel{
     constructor(
         private _data: Date, 
         public readonly quantidade: number, 
         public readonly valor: number
-    ) {}
+    ) {
+        super();//garante a chamada do construtor de imprimível, usando a super class.
+    }
 
     get volume(): number {
         return this.quantidade * this.valor;
